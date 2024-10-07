@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>name : {{name}}</p> <!--for calling the data in templates--> 
+    {% if role == "Admin" %}  <!--for using if-->
+        <h1> Welcome {{name}}</h1>
+    {% elif role == "Guest" %}    
+        <h2>Hello Guest User</h2>
+    {% else %}
+        <h2>Hello User<h2>    
+    {% endif %}    
+    <!--using for loop-->
+    {% for x in numbers %}
+        <p>The number is {{x}}</p>
+    {% endfor %}    
+
+{% endblock %}    

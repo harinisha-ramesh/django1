@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Our Services</h1>
+    <ul>
+    {% for x in services %}
+    <li>
+        <strong>{{x.name}}</strong> : {{x.description}}
+    </li>       
+    {% endfor %}    
+    </ul>
+{% endblock %}
