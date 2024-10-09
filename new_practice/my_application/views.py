@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views import View
+from .forms import *
+from .models import *
 
 def homepage(request):
     data = {
@@ -40,3 +41,24 @@ class contact(View):
             "Address": "123 Tech Park, Silicon Valley"
         }    
         return render (request,'contact.html',contact_info)
+    
+def ProductsAdd(request):
+
+    add = {
+        'product_add' : Product_Form
+    }
+    if request.method == "POST":
+        product_add = Product_Form(request.POST)
+
+        if product_add.is_valid():
+            product_add.save()
+
+    return render(request,'products_add.html', add)  
+
+def AllProducts(request):
+    
+    context = {
+        'all_products' : Product.objects.all()
+    }
+    
+    return render(request,'products.html',context)
