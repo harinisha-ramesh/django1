@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import ListView,CreateView,UpdateView,DeleteView
+from django.urls import reverse_lazy
 from .forms import *
 from .models import *
 
@@ -42,23 +44,44 @@ class contact(View):
         }    
         return render (request,'contact.html',contact_info)
     
-def ProductsAdd(request):
+class AllProducts(ListView):
+    model = Product
+    template_name = 'products.html'
+    context_object_name = 'all_products'
 
-    add = {
-        'product_add' : Product_Form
-    }
-    if request.method == "POST":
-        product_add = Product_Form(request.POST)
+class ProductsAdd(CreateView):
+    model = Product
+    form_class = Product_Form
+    template_name = 'products_add.html'
+    success_url = reverse_lazy('all-products')
 
-        if product_add.is_valid():
-            product_add.save()
+class ProductsUpdate(UpdateView):
+    model = Product
+    form_class = Product_Form
+    template_name = 'products_update.html'
+    success_url = reverse_lazy('all-products')
 
-    return render(request,'products_add.html', add)  
+class ProductsDelete(DeleteView):
+    model = Product
+    form_class = Product_Form 
+    template_name = 'products_delete.html'
+    success_url = reverse_lazy('all-products')
 
-def AllProducts(request):
-    
-    context = {
-        'all_products' : Product.objects.all()
-    }
-    
-    return render(request,'products.html',context)
+# def ProductsAdd(request):
+
+#     add = {
+#         'product_add' : Product_Form
+#     }
+#     if request.method == "POST":
+#         product_add = Product_Form(request.POST)
+
+#         if product_add.is_valid():
+#             product_add.save()
+
+#     return render(request,'products_add.html', add)  
+
+# def AllProducts(request):
+#     context = {
+#         'all_products' : Product.objects.all()
+#     } 
+#     return render(request,'products.html',context)    
