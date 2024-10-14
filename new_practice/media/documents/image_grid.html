@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>image grid</title>
+        <style>
+            img{
+                width: 25%;
+                float: left;
+                margin: 1.5%;
+            }
+            textarea{
+                border: 30px;
+                background: black;
+                color: red;
+                overflow-y: visible;
+                width: 50%;
+                border-style: inherit;
+                float: right;
+               
+            }
+            .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  
+}
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    height: 550px;
+    margin: 3px;
+    justify-content: space-around;
+}
+ 
+        
+
+        
+        </style>
+    </head>
+    <body>
+        <div class="flexbox" >
+            <img src="image1.jpg">
+            <img src="image 2.jpg">
+            <img src="image 3.jpg">
+            <img src="image 4.jpg">
+            <img src="image 5.jpg">
+            <img src="image 6.jpg">
+            <img src="image 7.jpg">
+            <img src="image 8.jpg">
+            <img src="image 9.jpg">
+        </div> 
+        <div>
+            <textarea name="information" id="information" cols="15" rows="8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quas harum iusto eligendi, saepe iure similique atque. Aut rem id, fugit harum suscipit dolorum fugiat architecto, voluptate amet quod exercitationem Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita omnis eius exercitationem consequatur quae beatae suscipit doloribus adipisci quia! Et quam, praesentium nulla minus eaque totam a laborum quaerat neque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt sint animi vero dolores nobis doloremque dolor magnam eum. Asperiores repellendus eum totam fugiat magni enim voluptatum alias corrupti unde optio?.</textarea>
+        </div>
+        
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>  
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>  
+</div>
+
+<p>Try resizing the browser window.</p>
+
+    </body>
+</html>

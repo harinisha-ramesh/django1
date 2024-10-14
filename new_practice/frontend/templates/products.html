@@ -23,9 +23,11 @@
                 <td>{{x.gst}}</td>
                 <td>{{x.food_product}}</td>
                 <td>
+                    <a href= "{% url 'update-products' x.pk %}">
                     <button>Update</button>
                 </td>
                 <td>
+                    <a href= "{% url 'delete-products' x.pk %}">
                     <button>Delete</button>
                 </td>
             </tr>
